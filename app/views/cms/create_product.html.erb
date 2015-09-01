@@ -1,6 +1,9 @@
 <div class="row">
   <div class="small-12 medium-12 large-12 columns">
   	<div class="panel">
+      <% if flash[:message] %>
+      <%= "</p> #{flash[:message]} </p>"%>
+      <% end %>
   	  <%= form_for :product, :url => {:action => 'submit_create'} do |f| -%>
   	    <p>Product Name <%= f.text_field :name %>
   	    Price <%= f.text_field :price %>
