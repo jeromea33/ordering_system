@@ -18,19 +18,35 @@ class CmsController < ApplicationController
     @product.details = params[:product][:details]
     @product.picture_url = params[:product][:picture_url]
     if @product.save
-      flash[:message] = @product.id.to_s + " save done"
+      flash[:message] = "#{@product.id.to_s} save done"
       redirect_to(:action => 'metrics')
     else
-      flash[:message] = @product.id.to_s + " save failed"
+      flash[:message] = "#{@product.id.to_s} save failed"
       redirect_to(:action => 'edit_product', :id => @product.id)
     end
   end
 
+  def submit_create
+    @new_product = Product.new
+    @new_product.name = params[:product][:name]
+    @new_product.price = params[:product][:price]
+    @new_product.details = params[:product][:details]
+    @new_product.picture_url = params[:product][:picture_url]
 
-  def create_product
+    if @new_product.valid?
+      @new_product.save
+      flash[:message] = "Product #{@new_product.name} saved"
+      redirect_to(:action => "metrics")
+    else
+      @new_product.errors.messages.each do |x, y|
+        flash[:message] = "#{x} #{y} </br>"
+        render "create_product"
+      end
+    end
+
   end
 
-  def show_product
+  def create_product
   end
 
   def edit_product
