@@ -33,3 +33,10 @@ div.product_small img{
 	margin: 0px;
 	padding: 0px;
 }
+
+div.product {
+	margin-top: 5px;
+	background-color: rgb(200,200,255);
+	border-style: solid;	
+	border-color: rgb(0,0,155);
+}

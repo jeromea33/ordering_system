@@ -12,10 +12,10 @@
       </div>
       
      
-     <div class="row">
+     <div class="row" data-equalizer>
       <h1 align="center">Have a taste of our pizza </h1>
       <% @pizzas.each do |pizza| %>
-        <div class="large-4 columns end">
+        <div class="large-4 columns end product" data-equalizer-watch>
           <h4> <%= pizza.name %> </h4>
           <%= image_tag(pizza.picture_url) %>
           <%= simple_format(pizza.details) %>
