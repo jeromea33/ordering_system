@@ -5,5 +5,6 @@ class OrderingController < ApplicationController
   end
 
   def orders
+  	@products = Product.all
   end
 end
