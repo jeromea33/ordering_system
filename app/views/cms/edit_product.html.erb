@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="small-12 medium-12 large-12 columns">
+  	<div class="panel">
+  	  <%= form_for :product, :url => {:action => 'submit_edit', :id => @product.id} do |f| -%>
+  	    <%= f.text_field :name %>
+  	    <%= f.text_field :price %>
+  	    <%= f.text_field :picture_url %>
+  	    <%= f.text_area :details %>
+  	    <%= submit_tag "Submit", :disable_with => 'Submiting...', :class => "button" %>
+  	  <% end -%>
+  	</div>
+  </div>
+</div>

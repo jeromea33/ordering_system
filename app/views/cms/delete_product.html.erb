@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="small-12 medium-12 large-12 columns" align = "center">
+  	<h1> Delete <%= @product.name %> </h1>
+  	<div>    
+  		<ul class="button-group">
+  		  <li><%= link_to "Yes", {:action => 'submit_delete', :id => @product.id}, :class => "alert button" %></li>
+  		  <li><%= link_to "No", {:action => 'metrics'}, :class => "big button" %></li>
+  		</ul>
+  	</div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="small-12 medium-12 large-12 columns">
+  	<h1 align="center"> Admin Login </h1>
+  	    
+  	<div class="panel">
+
+      <% if flash[:message] %>
+      <sub> <%= flash[:message] %>
+      <% end %>
+
+  	  <%= form_for :user, :url => {:action => "try_login"} do |f| -%>
+  	    Username <%= f.text_field :username %> </br>
+  	    Password <%= f.password_field :password %> </br>
+  	   	<%= f.submit "Submit", :class => "round button",:disable_with => 'Submiting...' %>
+  	  <% end -%>
+  	</div>
+  </div>
+</div>
