@@ -1,2 +1,14 @@
-<h1>Cms#create_product</h1>
-<p>Find me in app/views/cms/create_product.html.erb</p>
+<div class="row">
+  <div class="small-12 medium-12 large-12 columns">
+  	<div class="panel">
+  	  <%= form_for :product, :url => {:action => 'submit_create'} do |f| -%>
+  	    <p>Product Name <%= f.text_field :name %>
+  	    Price <%= f.text_field :price %>
+  	    Picture URL<%= f.text_field :picture_url %>
+  	    Details<%= f.text_area :details %>
+  	    <%= submit_tag "Submit", :disable_with => 'Submiting...', :class => "button" %>
+      </p>
+  	  <% end -%>
+  	</div>
+  </div>
+</div>
